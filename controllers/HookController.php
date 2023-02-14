@@ -30,6 +30,17 @@ class HookController extends Controller
         ];
     }
 
+    /**
+     * @return array
+     */
+    protected function verbs(): array
+    {
+        return [
+            'set-web-hook' => ['GET'],
+            'set-web-hook' => ['GET'],
+        ];
+    }
+
     public function actionIndex(): void
     {
         Command::run("/start", function($telegram){
@@ -75,5 +86,4 @@ class HookController extends Controller
         $telegram = Yii::$app->telegram->deleteWebhook();
         return Telegram::fromModel($telegram);
     }
-
 }

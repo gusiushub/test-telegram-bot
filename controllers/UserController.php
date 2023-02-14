@@ -5,9 +5,9 @@ namespace app\controllers;
 use yii\rest\Controller;
 use yii\web\Response;
 use app\models\User;
+use yii\data\Pagination;
 use yii\filters\VerbFilter;
 use yii\filters\ContentNegotiator;
-use yii\data\Pagination;
 use yii\web\NotFoundHttpException;
 use app\models\response\BaseResponse;
 use app\models\response\User as UserResponse;
@@ -27,6 +27,17 @@ class UserController extends Controller
                 'class' => VerbFilter::class,
                 'actions' => $this->verbs(),
             ],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    protected function verbs(): array
+    {
+        return [
+            'list' => ['GET'],
+            'delete' => ['DELETE'],
         ];
     }
 
