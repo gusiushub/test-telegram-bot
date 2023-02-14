@@ -1,0 +1,26 @@
+# Пользователи [/user]
+
+## List user [GET /user/list]
+Вывод списка пользователей
+
++ Request (application/json)
+
++ Response 200 (application/json)
+    + Attributes (object)
+        + user_id: 12 (number) - ID пользователя
+        + telegram_id: 111 (number) - ID telegram аккаунта пользователя
+        + fname: Вася (string) - Имя пользователя
+        + sname: Васильев (string) - Фамилия пользователя
+        + login: bazil (string) - username
+    
+## Del user [DELETE /user/{id}/delete]
+Удаление пользователя
+
++ Request (application/json)
+
++ Parameters
+    + id: 13711 (number) - ID пользователя (user_id)        
+    
++ Response 200 (application/json)
+    + Attributes (object)
+        + result: 0 (number) - Успешный код ответа
